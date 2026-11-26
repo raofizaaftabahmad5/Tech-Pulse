@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech Pulse: what's new in technology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f6f4;--ink:#14231f;--mute:#5a6b66;--card:#fff;--line:#d5dfdb;--a:#0f8b6d;--b:#ff5a36;--c:#3b5bdb}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1815;--ink:#e8f1ee;--mute:#9bb0a9;--card:#15251f;--line:#27403a;--a:#3ddbb0;--b:#ff7a59;--c:#8da2ff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 'Source Serif 4',Georgia,serif}
+h1,h2,h3,nav,button,label,.meta{font-family:'Bricolage Grotesque','Segoe UI',sans-serif}
+nav{display:flex;justify-content:space-between;align-items:center;max-width:960px;margin:0 auto;padding:18px 20px}
+nav b{font-size:1.3rem}nav a{color:var(--mute);text-decoration:none;margin-left:18px}nav a:hover{color:var(--a)}
+.hero{max-width:960px;margin:0 auto;padding:30px 20px 50px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.02;margin:0 0 16px;font-weight:800;letter-spacing:-.03em}
+.hero p{color:var(--mute);margin:0 0 20px}
+.btn{display:inline-block;background:var(--a);color:var(--bg);padding:11px 22px;border-radius:30px;text-decoration:none;font-weight:800;font-family:'Bricolage Grotesque',sans-serif}
+.pulse{width:100%;height:auto}
+.line{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.4s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.line{animation:none;stroke-dashoffset:0}}
+main{max-width:720px;margin:0 auto;padding:0 20px 60px}
+article{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:0 0 40px;overflow:hidden}
+article .vis{display:block;width:100%;height:auto}
+.body{padding:8px 28px 28px}
+.meta{color:var(--mute);font-size:.85rem}
+article h2{font-size:2rem;line-height:1.15;margin:6px 0 14px;letter-spacing:-.02em}
+article h3{margin:26px 0 6px;font-size:1.15rem}
+.comments{border-top:1px solid var(--line);margin-top:28px;padding-top:20px}
+.comments h3{margin-top:0}
+input,textarea{width:100%;font:inherit;font-size:1rem;padding:10px 12px;margin:0 0 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+button{background:var(--ink);color:var(--bg);border:0;border-radius:10px;padding:10px 20px;font-weight:800;cursor:pointer}
+.c{padding:12px 0;border-bottom:1px solid var(--line)}.c b{font-family:'Bricolage Grotesque',sans-serif}.c small{color:var(--mute);margin-left:8px}.c p{margin:4px 0 0;white-space:pre-wrap;word-break:break-word}
+.msg{color:var(--b);font-size:.95rem;min-height:1.4em}
+footer{text-align:center;color:var(--mute);padding:30px 20px;font-size:.9rem}
+@media(max-width:720px){.hero{grid-template-columns:1fr}body{font-size:17px}.body{padding:6px 20px 22px}}
+</style>
+</head>
+<body>
+<nav><b>Tech Pulse</b><div><a href="#agents">AI agents</a><a href="#chips">Chips</a><a href="#quantum">Quantum</a></div></nav>
+
+<header class="hero">
+  <div>
+    <h1>What's new in tech, in plain words.</h1>
+    <p>Three big shifts in AI, chips and quantum computing, explained without the jargon. Read, then tell us what you think.</p>
+    <a class="btn" href="#agents">Start reading</a>
+  </div>
+  <svg class="pulse" viewBox="0 0 400 300" role="img" aria-label="Rising signal line over a grid">
+    <g stroke="var(--line)" stroke-width="1"><path d="M0 60H400M0 120H400M0 180H400M0 240H400M80 0V300M160 0V300M240 0V300M320 0V300"/></g>
+    <path class="line" d="M10 250 L80 210 L130 225 L200 140 L250 160 L320 70 L390 40" fill="none" stroke="var(--a)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="var(--b)"><circle cx="200" cy="140" r="9"/><circle cx="320" cy="70" r="9"/><circle cx="390" cy="40" r="9"/></g>
+  </svg>
+</header>
+
+<main>
+<article class="post" id="agents" data-post="agents">
+  <svg class="vis" viewBox="0 0 720 220" role="img" aria-label="Network of connected AI nodes"><rect width="720" height="220" fill="var(--a)"/>
+    <g stroke="#fff" stroke-opacity=".6" stroke-width="3"><path d="M120 110L260 50L400 130L540 60L620 150M260 50L260 170L400 130M260 170L540 60"/></g>
+    <g fill="#fff"><circle cx="120" cy="110" r="14"/><circle cx="260" cy="50" r="14"/><circle cx="260" cy="170" r="14"/><circle cx="400" cy="130" r="20"/><circle cx="540" cy="60" r="14"/><circle cx="620" cy="150" r="14"/></g></svg>
+  <div class="body">
+    <div class="meta">Artificial intelligence · 4 min read</div>
+    <h2>AI is moving from chatting to doing</h2>
+    <p>For a few years, AI tools mostly answered questions. Now the focus is on <b>agents</b>: AI systems that take a goal, break it into steps and use software on your behalf, like booking a trip, fixing code or sorting a spreadsheet.</p>
+    <h3>Why it matters</h3>
+    <p>An assistant that only talks saves you reading time. An agent that works can save you hours. Companies are rushing to connect AI to calendars, email, browsers and developer tools.</p>
+    <h3>The catch</h3>
+    <p>Agents make mistakes, and a mistake that takes action costs more than a wrong answer. Good products keep a human in the loop for important steps and show exactly what the AI did.</p>
+    <div class="comments"></div>
+  </div>
+</article>
+
+<article class="post" id="chips" data-post="chips">
+  <svg class="vis" viewBox="0 0 720 220" role="img" aria-label="Computer chip diagram"><rect width="720" height="220" fill="var(--c)"/>
+    <g stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M290 40V70M330 40V70M370 40V70M410 40V70M450 40V70M290 150V180M330 150V180M370 150V180M410 150V180M450 150V180M250 80H220M250 110H220M250 140H220M490 80H520M490 110H520M490 140H520"/></g>
+    <rect x="250" y="70" width="240" height="80" rx="10" fill="#fff"/><rect x="290" y="88" width="160" height="44" rx="6" fill="var(--c)"/><text x="370" y="117" text-anchor="middle" fill="#fff" font-family="sans-serif" font-weight="700" font-size="20">NPU</text></svg>
+  <div class="body">
+    <div class="meta">Hardware · 3 min read</div>
+    <h2>Your next laptop and phone will think on their own</h2>
+    <p>Modern devices now include an <b>NPU</b>, a chip built for AI work. It runs AI features right on your device instead of sending your data to a distant server.</p>
+    <h3>Faster and more private</h3>
+    <p>Local AI means live captions, photo editing and writing help can work with no internet, with lower delay, and your files stay on your device.</p>
+    <h3>What to look for</h3>
+    <p>When buying a device, check how much memory it has and whether it has an NPU. AI features run best on devices with enough of both.</p>
+    <div class="comments"></div>
+  </div>
+</article>
+
+<article class="post" id="quantum" data-post="quantum">
+  <svg class="vis" viewBox="0 0 720 220" role="img" aria-label="Atom with orbiting electrons"><rect width="720" height="220" fill="var(--b)"/>
+    <g fill="none" stroke="#fff" stroke-width="4"><ellipse cx="360" cy="110" rx="150" ry="50"/><ellipse cx="360" cy="110" rx="150" ry="50" transform="rotate(60 360 110)"/><ellipse cx="360" cy="110" rx="150" ry="50" transform="rotate(120 360 110)"/></g>
+    <circle cx="360" cy="110" r="16" fill="#fff"/><g fill="#fff"><circle cx="510" cy="110" r="9"/><circle cx="285" cy="45" r="9"/><circle cx="285" cy="175" r="9"/></g></svg>
+  <div class="body">
+    <div class="meta">Emerging tech · 4 min read</div>
+    <h2>Quantum computing: still early, but getting real</h2>
+    <p>Normal computers use bits that are 0 or 1. Quantum computers use <b>qubits</b>, which can hold a mix of both states. For certain problems, this lets them explore many possibilities at once.</p>
+    <h3>Where it could help</h3>
+    <p>Researchers hope for progress in drug discovery, new materials and complex optimisation, like planning delivery routes.</p>
+    <h3>The reality check</h3>
+    <p>Qubits are fragile and error-prone, so much of the current work is about error correction. Quantum computers will not replace your laptop. They will be specialist tools used alongside normal computers.</p>
+    <div class="comments"></div>
+  </div>
+</article>
+</main>
+<footer>Tech Pulse · Be kind in the comments.</footer>
+
+<script>
+const esc = s => s; // we use textContent, so no HTML is ever injected
+document.querySelectorAll('.post').forEach(post => {
+  const id = post.dataset.post, box = post.querySelector('.comments');
+  box.innerHTML = `<h3>Comments</h3>
+    <label for="n-${id}">Your name</label><input id="n-${id}" maxlength="40" autocomplete="name">
+    <label for="t-${id}">Your comment</label><textarea id="t-${id}" rows="3" maxlength="500"></textarea>
+    <button type="button">Post comment</button><div class="msg" role="status"></div><div class="list"></div>`;
+  const list = box.querySelector('.list'), msg = box.querySelector('.msg');
+  const render = items => {
+    list.replaceChildren();
+    if (!items.length) { list.textContent = 'No comments yet. Be the first to share your view.'; return; }
+    items.forEach(c => {
+      const d = document.createElement('div'); d.className = 'c';
+      const b = document.createElement('b'); b.textContent = c.name;
+      const s = document.createElement('small'); s.textContent = new Date(c.date).toLocaleString();
+      const p = document.createElement('p'); p.textContent = c.text;
+      d.append(b, s, p); list.append(d);
+    });
+  };
+  const load = () => fetch('/api/comments/' + id).then(r => r.json()).then(render).catch(() => { msg.textContent = 'Could not load comments. Refresh the page.'; });
+  box.querySelector('button').onclick = async () => {
+    const name = box.querySelector('input').value, text = box.querySelector('textarea').value;
+    msg.textContent = '';
+    const r = await fetch('/api/comments/' + id, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, text }) });
+    if (!r.ok) { msg.textContent = (await r.json()).error || 'Could not post. Try again.'; return; }
+    box.querySelector('textarea').value = ''; load();
+  };
+  load();
+});
+</script>
+</body>
+</html>
+```[cite: 22]
+
+<Steps>
+  <Step subtitle="1 min" title="Code paste karein aur Commit changes dabayein">
+    Upar wale code ko copy kar ke GitHub ke editor mein (`public / index.html` ke neeche) paste karein, phir green **Commit changes...** par click kar ke **Commit changes** dabayein[cite: 21, 22].
+    *Verification:* Repository ke main page par `public` folder ban jayega aur us ke andar `index.html` nazar aayegi.
+  </Step>
+  <Step subtitle="3 min" title="Render par Web Service deploy karein">
+    `render.com` par ja kar **New + > Web Service** banayein, `Tech-Pulse` repository connect karein, **Build Command** mein `npm install` aur **Start Command** mein `npm start` rakhein, aur deploy shuru karein[cite: 9, 10].
+    *Verification:* Render par status `Live` ho jayega aur milne wale URL par aapki Tech Pulse website open ho jayegi[cite: 10, 22].
+  </Step>
+</Steps>
